@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ADF59A66D9E194AAEE8DB4B3 /* Pods_PersonalityQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62A3D733E8C21DBD325D470 /* Pods_PersonalityQuiz.framework */; };
+		F01B82DC23CAFE1F0026A2F3 /* PersonalityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01B82DB23CAFE1F0026A2F3 /* PersonalityModel.swift */; };
+		F01B82F123CB81D80026A2F3 /* PersonalityQuizTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01B82DD23CB73F50026A2F3 /* PersonalityQuizTest.swift */; };
+		F0587B7623CB9B3100E6FDCD /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0587B7523CB9B3100E6FDCD /* ResultsViewController.swift */; };
+		F0797EC823DEE81C00617A20 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0797EC723DEE81C00617A20 /* QuizView.swift */; };
+		F0797EEC23DF831D00617A20 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0797EEB23DF831D00617A20 /* ResultView.swift */; };
+		F0797EEE23DFA20200617A20 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0797EED23DFA20100617A20 /* HomeView.swift */; };
+		F0797EF023E0577C00617A20 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0797EEF23E0577C00617A20 /* ResultViewModel.swift */; };
+		F0797EF323E0800600617A20 /* PersonalityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0797EF223E0800600617A20 /* PersonalityManager.swift */; };
+		F0EBA40123C92515005C1221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EBA40023C92515005C1221 /* AppDelegate.swift */; };
+		F0EBA40323C92515005C1221 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EBA40223C92515005C1221 /* SceneDelegate.swift */; };
+		F0EBA40523C92515005C1221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EBA40423C92515005C1221 /* ViewController.swift */; };
+		F0EBA40823C92515005C1221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EBA40623C92515005C1221 /* Main.storyboard */; };
+		F0EBA40A23C92518005C1221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EBA40923C92518005C1221 /* Assets.xcassets */; };
+		F0EBA40D23C92518005C1221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EBA40B23C92518005C1221 /* LaunchScreen.storyboard */; };
+		F0EBA41823C95F2F005C1221 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EBA41723C95F2F005C1221 /* QuestionModel.swift */; };
+		F0EBA41A23C9940E005C1221 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EBA41923C9940E005C1221 /* QuestionManager.swift */; };
+		F0EBA41C23CAB8E2005C1221 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EBA41B23CAB8E2005C1221 /* QuizViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F01B82EA23CB74860026A2F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0EBA3F523C92515005C1221 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0EBA3FC23C92515005C1221;
+			remoteInfo = PersonalityQuiz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14B20BAC52D499D714BD20A1 /* Pods-PersonalityQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalityQuiz.debug.xcconfig"; path = "Target Support Files/Pods-PersonalityQuiz/Pods-PersonalityQuiz.debug.xcconfig"; sourceTree = "<group>"; };
+		31AF45AE5F269BE164683962 /* Pods-PersonalityQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalityQuiz.release.xcconfig"; path = "Target Support Files/Pods-PersonalityQuiz/Pods-PersonalityQuiz.release.xcconfig"; sourceTree = "<group>"; };
+		D62A3D733E8C21DBD325D470 /* Pods_PersonalityQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalityQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01B82DB23CAFE1F0026A2F3 /* PersonalityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityModel.swift; sourceTree = "<group>"; };
+		F01B82DD23CB73F50026A2F3 /* PersonalityQuizTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityQuizTest.swift; sourceTree = "<group>"; };
+		F01B82E523CB74860026A2F3 /* PersonalityQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalityQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01B82E923CB74860026A2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0587B7523CB9B3100E6FDCD /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		F0797EC723DEE81C00617A20 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		F0797EEB23DF831D00617A20 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		F0797EED23DFA20100617A20 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F0797EEF23E0577C00617A20 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		F0797EF223E0800600617A20 /* PersonalityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityManager.swift; sourceTree = "<group>"; };
+		F0EBA3FD23C92515005C1221 /* PersonalityQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalityQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EBA40023C92515005C1221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0EBA40223C92515005C1221 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F0EBA40423C92515005C1221 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0EBA40723C92515005C1221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0EBA40923C92518005C1221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0EBA40C23C92518005C1221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0EBA40E23C92518005C1221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EBA41723C95F2F005C1221 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		F0EBA41923C9940E005C1221 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		F0EBA41B23CAB8E2005C1221 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F01B82E223CB74860026A2F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EBA3FA23C92515005C1221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADF59A66D9E194AAEE8DB4B3 /* Pods_PersonalityQuiz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41276BE340881CF927226C77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14B20BAC52D499D714BD20A1 /* Pods-PersonalityQuiz.debug.xcconfig */,
+				31AF45AE5F269BE164683962 /* Pods-PersonalityQuiz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA1295E8D9119AB4C6F8F273 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D62A3D733E8C21DBD325D470 /* Pods_PersonalityQuiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F01B82E023CB74070026A2F3 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				F0EBA40023C92515005C1221 /* AppDelegate.swift */,
+				F0EBA40223C92515005C1221 /* SceneDelegate.swift */,
+			);
+			path = Startup;
+			sourceTree = "<group>";
+		};
+		F01B82E623CB74860026A2F3 /* PersonalityQuizTests */ = {
+			isa = PBXGroup;
+			children = (
+				F01B82DD23CB73F50026A2F3 /* PersonalityQuizTest.swift */,
+				F01B82E923CB74860026A2F3 /* Info.plist */,
+			);
+			path = PersonalityQuizTests;
+			sourceTree = "<group>";
+		};
+		F0797EF123E07F6300617A20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F0EBA41B23CAB8E2005C1221 /* QuizViewModel.swift */,
+				F0797EEF23E0577C00617A20 /* ResultViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0797EF423E08D0A00617A20 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F0EBA41923C9940E005C1221 /* QuestionManager.swift */,
+				F0797EF223E0800600617A20 /* PersonalityManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F0EBA3F423C92515005C1221 = {
+			isa = PBXGroup;
+			children = (
+				F0EBA3FF23C92515005C1221 /* PersonalityQuiz */,
+				F01B82E623CB74860026A2F3 /* PersonalityQuizTests */,
+				F0EBA3FE23C92515005C1221 /* Products */,
+				41276BE340881CF927226C77 /* Pods */,
+				DA1295E8D9119AB4C6F8F273 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F0EBA3FE23C92515005C1221 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0EBA3FD23C92515005C1221 /* PersonalityQuiz.app */,
+				F01B82E523CB74860026A2F3 /* PersonalityQuizTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0EBA3FF23C92515005C1221 /* PersonalityQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				F01B82E023CB74070026A2F3 /* Startup */,
+				F0797EF423E08D0A00617A20 /* Data */,
+				F0EBA41423C95EF5005C1221 /* Model */,
+				F0797EF123E07F6300617A20 /* ViewModel */,
+				F0EBA41623C95F10005C1221 /* View */,
+				F0EBA41523C95F00005C1221 /* Controller */,
+				F0EBA40923C92518005C1221 /* Assets.xcassets */,
+				F0EBA40E23C92518005C1221 /* Info.plist */,
+			);
+			path = PersonalityQuiz;
+			sourceTree = "<group>";
+		};
+		F0EBA41423C95EF5005C1221 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0EBA41723C95F2F005C1221 /* QuestionModel.swift */,
+				F01B82DB23CAFE1F0026A2F3 /* PersonalityModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0EBA41523C95F00005C1221 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0EBA40423C92515005C1221 /* ViewController.swift */,
+				F0587B7523CB9B3100E6FDCD /* ResultsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0EBA41623C95F10005C1221 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0EBA40B23C92518005C1221 /* LaunchScreen.storyboard */,
+				F0EBA40623C92515005C1221 /* Main.storyboard */,
+				F0797EED23DFA20100617A20 /* HomeView.swift */,
+				F0797EC723DEE81C00617A20 /* QuizView.swift */,
+				F0797EEB23DF831D00617A20 /* ResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F01B82E423CB74860026A2F3 /* PersonalityQuizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F01B82EC23CB74860026A2F3 /* Build configuration list for PBXNativeTarget "PersonalityQuizTests" */;
+			buildPhases = (
+				F01B82E123CB74860026A2F3 /* Sources */,
+				F01B82E223CB74860026A2F3 /* Frameworks */,
+				F01B82E323CB74860026A2F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F01B82EB23CB74860026A2F3 /* PBXTargetDependency */,
+			);
+			name = PersonalityQuizTests;
+			productName = PersonalityQuizTests;
+			productReference = F01B82E523CB74860026A2F3 /* PersonalityQuizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F0EBA3FC23C92515005C1221 /* PersonalityQuiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0EBA41123C92518005C1221 /* Build configuration list for PBXNativeTarget "PersonalityQuiz" */;
+			buildPhases = (
+				B311F4F1A7A8F7B9FFD48E18 /* [CP] Check Pods Manifest.lock */,
+				F0EBA3F923C92515005C1221 /* Sources */,
+				F0EBA3FA23C92515005C1221 /* Frameworks */,
+				F0EBA3FB23C92515005C1221 /* Resources */,
+				F01B82DA23CAC97B0026A2F3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PersonalityQuiz;
+			productName = PersonalityQuiz;
+			productReference = F0EBA3FD23C92515005C1221 /* PersonalityQuiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0EBA3F523C92515005C1221 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Jing Song Du";
+				TargetAttributes = {
+					F01B82E423CB74860026A2F3 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F0EBA3FC23C92515005C1221;
+					};
+					F0EBA3FC23C92515005C1221 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = F0EBA3F823C92515005C1221 /* Build configuration list for PBXProject "PersonalityQuiz" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0EBA3F423C92515005C1221;
+			productRefGroup = F0EBA3FE23C92515005C1221 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0EBA3FC23C92515005C1221 /* PersonalityQuiz */,
+				F01B82E423CB74860026A2F3 /* PersonalityQuizTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F01B82E323CB74860026A2F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EBA3FB23C92515005C1221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0EBA40D23C92518005C1221 /* LaunchScreen.storyboard in Resources */,
+				F0EBA40A23C92518005C1221 /* Assets.xcassets in Resources */,
+				F0EBA40823C92515005C1221 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B311F4F1A7A8F7B9FFD48E18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PersonalityQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F01B82DA23CAC97B0026A2F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F01B82E123CB74860026A2F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F01B82F123CB81D80026A2F3 /* PersonalityQuizTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EBA3F923C92515005C1221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0EBA40523C92515005C1221 /* ViewController.swift in Sources */,
+				F0EBA41823C95F2F005C1221 /* QuestionModel.swift in Sources */,
+				F0797EC823DEE81C00617A20 /* QuizView.swift in Sources */,
+				F0EBA40123C92515005C1221 /* AppDelegate.swift in Sources */,
+				F0EBA41A23C9940E005C1221 /* QuestionManager.swift in Sources */,
+				F0797EEE23DFA20200617A20 /* HomeView.swift in Sources */,
+				F0797EF323E0800600617A20 /* PersonalityManager.swift in Sources */,
+				F0EBA41C23CAB8E2005C1221 /* QuizViewModel.swift in Sources */,
+				F01B82DC23CAFE1F0026A2F3 /* PersonalityModel.swift in Sources */,
+				F0797EEC23DF831D00617A20 /* ResultView.swift in Sources */,
+				F0797EF023E0577C00617A20 /* ResultViewModel.swift in Sources */,
+				F0EBA40323C92515005C1221 /* SceneDelegate.swift in Sources */,
+				F0587B7623CB9B3100E6FDCD /* ResultsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F01B82EB23CB74860026A2F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0EBA3FC23C92515005C1221 /* PersonalityQuiz */;
+			targetProxy = F01B82EA23CB74860026A2F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0EBA40623C92515005C1221 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0EBA40723C92515005C1221 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0EBA40B23C92518005C1221 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0EBA40C23C92518005C1221 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F01B82ED23CB74860026A2F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PersonalityQuizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jsdu.PersonalityQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PersonalityQuiz.app/PersonalityQuiz";
+			};
+			name = Debug;
+		};
+		F01B82EE23CB74860026A2F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PersonalityQuizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jsdu.PersonalityQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PersonalityQuiz.app/PersonalityQuiz";
+			};
+			name = Release;
+		};
+		F0EBA40F23C92518005C1221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0EBA41023C92518005C1221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0EBA41223C92518005C1221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B20BAC52D499D714BD20A1 /* Pods-PersonalityQuiz.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7F2BYR78VB;
+				INFOPLIST_FILE = PersonalityQuiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jsdu.PersonalityQuiz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0EBA41323C92518005C1221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31AF45AE5F269BE164683962 /* Pods-PersonalityQuiz.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7F2BYR78VB;
+				INFOPLIST_FILE = PersonalityQuiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jsdu.PersonalityQuiz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F01B82EC23CB74860026A2F3 /* Build configuration list for PBXNativeTarget "PersonalityQuizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F01B82ED23CB74860026A2F3 /* Debug */,
+				F01B82EE23CB74860026A2F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0EBA3F823C92515005C1221 /* Build configuration list for PBXProject "PersonalityQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EBA40F23C92518005C1221 /* Debug */,
+				F0EBA41023C92518005C1221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0EBA41123C92518005C1221 /* Build configuration list for PBXNativeTarget "PersonalityQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0EBA41223C92518005C1221 /* Debug */,
+				F0EBA41323C92518005C1221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0EBA3F523C92515005C1221 /* Project object */;
+}
