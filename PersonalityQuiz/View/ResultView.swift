@@ -23,7 +23,7 @@ struct ResultView: View {
                             .scaledToFill()
                             .frame(width: UIScreen.main.bounds.width)
                             .overlay(
-                                LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)), Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 0.4829720511))]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                                LinearGradient(gradient: Gradient(colors: self.resultViewModel.personalityContainer.personalityModel.color), startPoint: .topLeading, endPoint: .bottomTrailing)
                                     //                    .scaledToFill()
                                     .clipShape(RoundedRectangle(cornerRadius: 25))
                         )

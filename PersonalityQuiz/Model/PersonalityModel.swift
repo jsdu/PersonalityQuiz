@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct PersonalityContainer {
     let personalityModel: PersonalityModel
@@ -18,7 +19,7 @@ struct PersonalityModel {
     let name: String
     let description: String
     let job: [String]
-    let color: [String]
+    let color: [Color]
     let famousName: [String]
 }
 
