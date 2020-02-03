@@ -15,7 +15,6 @@ class QuizViewModel: ObservableObject {
     @Published var quiz: [Question] = []
     @Published var currentQuestionIndex = 0
     @Published var quizCompleted: Bool = false
-
     @Published var showQuiz: Bool = false
 
     var answers: [Double] = []
@@ -30,8 +29,8 @@ class QuizViewModel: ObservableObject {
     }
 
     func restart() {
-        questionManager = QuestionManager()
         setInitialState()
+        questionManager = QuestionManager()
     }
 
     func setupAdditionalQuestions() {
@@ -77,10 +76,11 @@ class QuizViewModel: ObservableObject {
     }
 
     private func setInitialState() {
+        showQuiz = false
+
         quiz = questionManager.getQuestions()
-        currentQuestionIndex = 48 //
+        currentQuestionIndex = 46 //
         answers = [Double](repeating: 0, count: 50)
-        quizCompleted = false
     }
 }
 
@@ -91,7 +91,7 @@ protocol QuizViewModelDelegate: class {
 
 extension QuizViewModel: QuizViewModelDelegate {
     func quitQuiz() {
-        self.showQuiz = false
+        restart()
     }
 
     func getScore() -> [CharacterType: Double] {

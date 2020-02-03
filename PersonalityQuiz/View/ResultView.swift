@@ -14,8 +14,10 @@ struct ResultView: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+                .edgesIgnoringSafeArea(.all)
 
-            ScrollView(showsIndicators: false){
+
+            ScrollView(showsIndicators: false) {
                 VStack {
                     ZStack(alignment: .top) {
                         Image(uiImage: #imageLiteral(resourceName: "personalityBg"))
@@ -24,8 +26,6 @@ struct ResultView: View {
                             .frame(width: UIScreen.main.bounds.width)
                             .overlay(
                                 LinearGradient(gradient: Gradient(colors: self.resultViewModel.personalityContainer.personalityModel.color), startPoint: .topLeading, endPoint: .bottomTrailing)
-                                    //                    .scaledToFill()
-                                    .clipShape(RoundedRectangle(cornerRadius: 25))
                         )
 
                         HStack {
@@ -34,27 +34,28 @@ struct ResultView: View {
                                     .font(.system(size: 50))
                                     .fontWeight(.bold)
                                 Text(self.resultViewModel.personalityContainer.personalityModel.name)
+
+                                    Spacer()
+                                Text(self.resultViewModel.personalityContainer.personalityModel.description)
                             }
                             .foregroundColor(Color.white)
-
                             Spacer()
-                                .frame(width: UIScreen.main.bounds.width / 2)
+//                            .frame(width: UIScreen.main.bounds.width)
                         }
+                        .padding(.bottom, 20)
+                        .padding(.leading, 20)
                         .padding(.top, 120)
 
                     }
                     .frame(height: 500)
                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-//                    .edgesIgnoringSafeArea(.top)
-                    Spacer()
-
-                    //                VStack {
-                    //                    ForEach(CharacterType.allCases, id: \.self) { character in
-                    //                        BarView(value: self.resultViewModel.score[character]!,
-                    //                                char: character,
-                    //                            text: self.resultViewModel.personalityContainer.personality[character]!)
-                    //                    }
-                    //                }
+                                    VStack {
+                                        ForEach(CharacterType.allCases, id: \.self) { character in
+                                            BarView(value: self.resultViewModel.score[character]!,
+                                                    char: character,
+                                                text: self.resultViewModel.personalityContainer.personality[character]!)
+                                        }
+                                    }
 
                     Button(action: {
                         self.resultViewModel.quizViewModelDelegate?.quitQuiz()
@@ -103,11 +104,25 @@ struct BarView: View {
 struct ResultView_Previews: PreviewProvider {
     @State var showQuiz = true
     static var previews: some View {
-        NavigationView {
-            ResultView(resultViewModel:
-                ResultViewModel(quizViewModelDelegate: QuizViewModel()))
-        }
-        .navigationBarTitle(Text("Quiz")) // Add this line
-        .navigationBarHidden(true)
+        Group {
+                NavigationView {
+                    ResultView(resultViewModel:
+                        ResultViewModel(quizViewModelDelegate: QuizViewModel()))
+                }
+                .navigationBarTitle(Text("Quiz")) // Add this line
+                .navigationBarHidden(true)
+
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+                .previewDisplayName("iPhone SE")
+
+                NavigationView {
+                    ResultView(resultViewModel:
+                        ResultViewModel(quizViewModelDelegate: QuizViewModel()))
+                }
+                .navigationBarTitle(Text("Quiz")) // Add this line
+                .navigationBarHidden(true)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
+                .previewDisplayName("iPhone 11 Pro Max")
+            }
     }
 }
