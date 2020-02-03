@@ -11,17 +11,16 @@ import Foundation
 class ResultViewModel: ObservableObject {
     private var personalityManager = PersonalityManager()
     @Published var personalityContainer: PersonalityContainer
-    @Published var score: [CharacterType: Int]
     weak var quizViewModelDelegate: QuizViewModelDelegate!
+    var score: [CharacterType: Double]
+
+    func getPersonalityLabel(char: CharacterType) -> (String, String) {
+        return personalityManager.personalityLabel[char]!
+    }
 
     init(quizViewModelDelegate: QuizViewModel) {
         self.quizViewModelDelegate = quizViewModelDelegate
-        var testScore: [CharacterType: Int] = [:]
-
-        for char in quizViewModelDelegate.getScore() {
-            testScore[char.key] = Int(char.value * 100)
-        }
-        self.score = testScore
         personalityContainer = personalityManager.calculatePersonality(quizViewModelDelegate.getScore())
+        self.score = quizViewModelDelegate.getScore()
     }
 }

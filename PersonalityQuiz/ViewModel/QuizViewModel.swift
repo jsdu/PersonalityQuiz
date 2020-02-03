@@ -35,21 +35,21 @@ class QuizViewModel: ObservableObject {
 
     func setupAdditionalQuestions() {
         quiz.append(contentsOf: questionManager.getAdditionalQuestions())
-        answers.append(contentsOf: [Double](repeating: 0, count: 50))
+        answers.append(contentsOf: [Double](repeating: 5, count: 50))
     }
 
-    func getScore(_ type: AnswerType) -> Double {
+    func getScore(type: AnswerType, isPositive: Bool) -> Double {
         switch type {
         case .stronglyAgree:
-            return 1
+            return isPositive ? 10 : 0
         case .agree:
-            return 0.7
+            return isPositive ? 7 : 3
         case .neutral:
-            return 0
+            return isPositive ? 5 : 5
         case .disagree:
-            return -0.7
+            return isPositive ? 3 : 7
         case .stronglyDisagree:
-            return -1
+            return isPositive ? 0 : 10
         }
     }
 
@@ -65,7 +65,7 @@ class QuizViewModel: ObservableObject {
 
     func submitAnswer(answer: AnswerType) {
         if !quizCompleted {
-            answers[currentQuestionIndex] =  quiz[currentQuestionIndex].isPositive ? getScore(answer) : -1 * getScore(answer)
+            answers[currentQuestionIndex] = getScore(type: answer, isPositive: quiz[currentQuestionIndex].isPositive)
             if currentQuestionIndex < quiz.count - 1 {
                 currentQuestionIndex += 1
             } else {
@@ -80,7 +80,7 @@ class QuizViewModel: ObservableObject {
 
         quiz = questionManager.getQuestions()
         currentQuestionIndex = 46 //
-        answers = [Double](repeating: 0, count: 50)
+        answers = [Double](repeating: 5, count: 50)
     }
 }
 
@@ -106,11 +106,9 @@ extension QuizViewModel: QuizViewModelDelegate {
         for index in 0..<answers.count {
             score[quiz[index].questionType]! += answers[index]
         }
-
         let percentageScore = score.mapValues { value in
-            return value / 10.0
+            return value / 100.0
         }
-
         return percentageScore
     }
 }

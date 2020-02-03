@@ -15,8 +15,6 @@ struct ResultView: View {
         ZStack(alignment: .top) {
             Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
                 .edgesIgnoringSafeArea(.all)
-
-
             ScrollView(showsIndicators: false) {
                 VStack {
                     ZStack(alignment: .top) {
@@ -35,33 +33,52 @@ struct ResultView: View {
                                     .fontWeight(.bold)
                                 Text(self.resultViewModel.personalityContainer.personalityModel.name)
 
-                                    Spacer()
+                                Spacer()
                                 Text(self.resultViewModel.personalityContainer.personalityModel.description)
                             }
                             .foregroundColor(Color.white)
                             Spacer()
-//                            .frame(width: UIScreen.main.bounds.width)
+                            //                            .frame(width: UIScreen.main.bounds.width)
                         }
-                        .padding(.bottom, 20)
-                        .padding(.leading, 20)
-                        .padding(.top, 120)
+                        .padding(.top, 80)
+                        .padding()
 
                     }
                     .frame(height: 500)
                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                    VStack {
-                                        ForEach(CharacterType.allCases, id: \.self) { character in
-                                            BarView(value: self.resultViewModel.score[character]!,
-                                                    char: character,
-                                                text: self.resultViewModel.personalityContainer.personality[character]!)
-                                        }
-                                    }
 
+                    HStack {
+                        Text("Results")
+                            .font(.title)
+                            .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    .padding()
+                    VStack {
+                        ForEach(CharacterType.allCases, id: \.self) { character in
+                            BarView(color: self.resultViewModel.personalityContainer.personalityModel.color[0],
+                                    value: self.resultViewModel.score[character]!,
+                                    char: character,
+                                    text: self.resultViewModel.getPersonalityLabel(char: character))
+                        }
+                    }
                     Button(action: {
                         self.resultViewModel.quizViewModelDelegate?.quitQuiz()
-                    }) {
-                        Text("Continue")
-                    }
+                    }, label: {
+                        Text("Next")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                            .padding([.leading, .trailing], 55)
+                            .padding([.bottom, .top], 25)
+                    })
+                        .frame(width: UIScreen.main.bounds.width - 80, height: 55)
+                        .background(Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)))
+                        .cornerRadius(7) // Inner corner radius
+                        .padding(4) // Width of the border
+                        .background(Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 0.6015625))) // Color of the border
+                        .cornerRadius(10) // Outer corner radius
+                        .padding(.top, 50)
                 }
             }
             .edgesIgnoringSafeArea(.all)
@@ -70,34 +87,57 @@ struct ResultView: View {
 }
 
 struct BarView: View {
-
-    var value: Int = 0
+    var color: Color
+    var value: Double = 0.0
     var char: CharacterType
-    var text: String
+    var text: (String, String)
 
     var body: some View {
         VStack {
             HStack(alignment: .center) {
-                Text(text)
+                Text(text.0)
                     .font(.caption)
+                    .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                    .fontWeight(.medium)
                     .frame(width: 70)
-
                 ZStack(alignment: .leading) {
-                    Capsule().frame(width: 200, height: 10)
-                        .foregroundColor(.yellow)
+                    Capsule().frame(width: UIScreen.main.bounds.width / 2.3, height: 5)
+                        .foregroundColor(Color(#colorLiteral(red: 0.9310112596, green: 0.9362261891, blue: 0.9490919709, alpha: 1)))
                     HStack {
-                        Capsule().frame(width: CGFloat(abs(value)*2), height: 10)
-                            .foregroundColor(.black)
+                        Capsule().frame(width: CGFloat(value * Double(UIScreen.main.bounds.width) / 2.3), height: 5)
+                            .foregroundColor(color)
                     }
                 }
                 .padding(.leading, 10)
                 .frame(height: 20)
-                Text("\(Int(abs(value)))%")
+                Text(text.1)
                     .font(.caption)
-                    .foregroundColor(.gray)
-                    .frame(width: 40)
+                    .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                    .fontWeight(.medium)
+                    .frame(width: 70)
             }
         }
+    }
+}
+
+struct FinishButtonView: View {
+
+    var body: some View {
+        Button(action: {
+
+        }, label: {
+            Text("Next")
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
+                .padding([.leading, .trailing], 55)
+                .padding([.bottom, .top], 25)
+        })
+            .frame(width: 200, height: 75)
+            .background(Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)))
+            .cornerRadius(7) // Inner corner radius
+            .padding(4) // Width of the border
+            .background(Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 0.6015625))) // Color of the border
+            .cornerRadius(10) // Outer corner radius
     }
 }
 
@@ -105,24 +145,24 @@ struct ResultView_Previews: PreviewProvider {
     @State var showQuiz = true
     static var previews: some View {
         Group {
-                NavigationView {
-                    ResultView(resultViewModel:
-                        ResultViewModel(quizViewModelDelegate: QuizViewModel()))
-                }
+            NavigationView {
+                ResultView(resultViewModel:
+                    ResultViewModel(quizViewModelDelegate: QuizViewModel()))
+            }
                 .navigationBarTitle(Text("Quiz")) // Add this line
                 .navigationBarHidden(true)
 
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
                 .previewDisplayName("iPhone SE")
 
-                NavigationView {
-                    ResultView(resultViewModel:
-                        ResultViewModel(quizViewModelDelegate: QuizViewModel()))
-                }
+            NavigationView {
+                ResultView(resultViewModel:
+                    ResultViewModel(quizViewModelDelegate: QuizViewModel()))
+            }
                 .navigationBarTitle(Text("Quiz")) // Add this line
                 .navigationBarHidden(true)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
                 .previewDisplayName("iPhone 11 Pro Max")
-            }
+        }
     }
 }

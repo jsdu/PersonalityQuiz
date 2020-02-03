@@ -12,7 +12,6 @@ import SwiftUI
 struct PersonalityContainer {
     let personalityModel: PersonalityModel
     let personalityName: String // INTJ-A
-    let personality: [CharacterType: String] // Introvert, Intuitive, ...
 }
 
 struct PersonalityModel {
