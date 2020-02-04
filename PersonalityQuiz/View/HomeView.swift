@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var quizViewModel: QuizViewModel
-
+//    @ObservedObject var homeViewModel: HomeViewModel
     var body: some View {
         NavigationView {
             ZStack(alignment: .center) {

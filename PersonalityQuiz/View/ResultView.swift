@@ -40,7 +40,7 @@ struct ResultView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     Spacer()
-                        .frame(height: UIScreen.main.bounds.height - 20)
+                        .frame(height: UIScreen.main.bounds.height - 14)
                     ZStack {
                         Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
                         VStack {
@@ -71,25 +71,26 @@ struct ResultView: View {
                             }, label: {
                                 Text("Next")
                                     .fontWeight(.bold)
-                                    .foregroundColor(Color.white)
+                                    .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                                     .padding([.leading, .trailing], 55)
                                     .padding([.bottom, .top], 25)
                             })
                                 .frame(width: UIScreen.main.bounds.width - 80, height: 55)
                                 .background(Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)))
                                 .cornerRadius(7) // Inner corner radius
-                                .padding(4) // Width of the border
-                                .background(Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 0.6015625))) // Color of the border
-                                .cornerRadius(10) // Outer corner radius
+                                .padding(1) // Width of the border
+                                .background(Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1))) // Color of the border
+                                .cornerRadius(8) // Outer corner radius
                                 .padding(.top, 50)
                         }
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 20)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                 }
             }
             .edgesIgnoringSafeArea(.all)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -104,7 +105,7 @@ struct BarView: View {
             HStack(alignment: .center) {
                 Text(text.0)
                     .font(.caption)
-                    .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                    .foregroundColor(value <= 0.5 ? Color(#colorLiteral(red: 0.3764297962, green: 0.4000405669, blue: 0.8155850768, alpha: 1)) : Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
                     .fontWeight(.medium)
                     .frame(width: 70)
                     .multilineTextAlignment(.trailing)
@@ -120,7 +121,7 @@ struct BarView: View {
                 .frame(height: 20)
                 Text(text.1)
                     .font(.caption)
-                    .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                    .foregroundColor(value > 0.5 ? Color(#colorLiteral(red: 0.3764297962, green: 0.4000405669, blue: 0.8155850768, alpha: 1)) : Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
                     .fontWeight(.medium)
                     .frame(width: 70)
             }
@@ -157,7 +158,7 @@ struct ResultView_Previews: PreviewProvider {
                 ResultView(resultViewModel:
                     ResultViewModel(quizViewModelDelegate: QuizViewModel()))
             }
-            .edgesIgnoringSafeArea(.top)
+                .edgesIgnoringSafeArea(.top)
                 .navigationBarTitle(Text("Quiz")) // Add this line
                 .navigationBarHidden(true)
 

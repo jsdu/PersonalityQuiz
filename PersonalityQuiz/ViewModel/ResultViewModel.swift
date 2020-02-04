@@ -22,5 +22,6 @@ class ResultViewModel: ObservableObject {
         self.quizViewModelDelegate = quizViewModelDelegate
         personalityContainer = personalityManager.calculatePersonality(quizViewModelDelegate.getScore())
         self.score = quizViewModelDelegate.getScore()
+        print(score)
     }
 }

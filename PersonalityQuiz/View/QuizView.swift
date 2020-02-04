@@ -47,7 +47,6 @@ struct QuizView: View {
                         Text("")
                     }
                     .isDetailLink(false)
-                    .navigationBarBackButtonHidden(true)
                     ZStack(alignment: .top) {
                         Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
                         VStack(spacing: 20) {
@@ -86,7 +85,7 @@ struct QuizView: View {
                     .frame(width: UIScreen.main.bounds.width / 1.2)
                 }
                 Spacer()
-                .frame(height: UIScreen.main.bounds.height / 1.1)
+                .frame(height: UIScreen.main.bounds.height / 1.16)
 
             }
 //            .edgesIgnoringSafeArea(.top)
@@ -102,6 +101,7 @@ struct QuizView: View {
 //                    .frame(height: UIScreen.main.bounds.height / 1.1)
 //            }
         }
+    .navigationBarBackButtonHidden(true)
 //        .frame(maxWidth: .infinity)
     }
 }
@@ -162,9 +162,6 @@ struct NextButtonView: View {
                 Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)) :
                 Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))) // Color of the border
             .cornerRadius(7) // Inner corner radius
-            .padding(4) // Width of the border
-            .background(self.selectedAnswerType != nil ? Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 0.6015625)) : Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.5776573504))) // Color of the border
-            .cornerRadius(10) // Outer corner radius
     }
 }
 
@@ -189,12 +186,12 @@ struct ResponseButtonView: View {
             .accentColor(self.selectedAnswerType == answerType ? Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)) : Color(#colorLiteral(red: 0.5294117647, green: 0.6392156863, blue: 0.7725490196, alpha: 1)))
             .frame(width: UIScreen.main.bounds.width - 130, height: 45)
             .background(self.selectedAnswerType == answerType ?
-                LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)), Color(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing) :
+                LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)), Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing) :
                 LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)) // Color of the border
                 .cornerRadius(7) // Inner corner radius
                 .padding(1) // Width of the border
                 .background(self.selectedAnswerType == answerType ?
-                    LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)), Color(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing) :
+                    LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1)), Color(#colorLiteral(red: 0.9882168174, green: 0.6588549018, blue: 0.1843422353, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing) :
                     LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.5294117647, green: 0.6392156863, blue: 0.7725490196, alpha: 1)), Color(#colorLiteral(red: 0.5294117647, green: 0.6392156863, blue: 0.7725490196, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)) // Color of the border
                 .cornerRadius(8) // Outer corner radius
         })
@@ -210,6 +207,7 @@ struct QuizView_Previews: PreviewProvider {
                     quizViewModel: QuizViewModel()
                 )
             }
+                .edgesIgnoringSafeArea(.top)
                 .navigationBarTitle(Text("Quiz")) // Add this line
                 .navigationBarHidden(true)
                 
@@ -221,6 +219,7 @@ struct QuizView_Previews: PreviewProvider {
                     quizViewModel: QuizViewModel()
                 )
             }
+                .edgesIgnoringSafeArea(.top)
                 .navigationBarTitle(Text("Quiz")) // Add this line
                                .navigationBarHidden(true)
             .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
