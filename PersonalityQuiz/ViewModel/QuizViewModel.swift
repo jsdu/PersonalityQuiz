@@ -79,7 +79,7 @@ class QuizViewModel: ObservableObject {
         showQuiz = false
 
         quiz = questionManager.getQuestions()
-        currentQuestionIndex = 46 //
+        currentQuestionIndex = 48 //
         answers = [Double](repeating: 5, count: 50)
     }
 }

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Asset 1.png",
+      "filename" : "Do copy-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Asset 1-1.png",
+      "filename" : "Do copy.png",
       "scale" : "2x"
     },
     {

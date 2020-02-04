@@ -13,7 +13,7 @@ struct HomeView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .center) {
                 VStack {
                     NavigationLink(destination: QuizView(
                         quizViewModel: quizViewModel),
